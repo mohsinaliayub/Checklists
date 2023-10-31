@@ -10,14 +10,14 @@ import UIKit
 class ChecklistViewController: UITableViewController {
     
     var items: [ChecklistItem] = []
-    
-    let todoItems = [
-        "Walk the dog", "Brush my teeth", "Learn iOS development",
-        "Soccer practice", "Eat ice cream"
-    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        addDummyData()
+    }
+    
+    private func addDummyData() {
         // Do any additional setup after loading the view.
         let item1 = ChecklistItem(text: "Walk the dog")
         items.append(item1)
