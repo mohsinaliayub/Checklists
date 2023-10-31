@@ -9,6 +9,8 @@ import UIKit
 
 class ChecklistViewController: UITableViewController {
     
+    var items: [ChecklistItem] = []
+    
     let todoItems = [
         "Walk the dog", "Brush my teeth", "Learn iOS development",
         "Soccer practice", "Eat ice cream"
@@ -17,6 +19,24 @@ class ChecklistViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        let item1 = ChecklistItem(text: "Walk the dog")
+        items.append(item1)
+        
+        let item2 = ChecklistItem(text: "Brush my teeth", checked: true)
+        items.append(item2)
+        
+        let item3 = ChecklistItem(text: "Learn iOS development", checked: true)
+        items.append(item3)
+        
+        let item4 = ChecklistItem(text: "Soccer practice")
+        items.append(item4)
+        
+        let item5 = ChecklistItem(text: "Eat ice cream")
+        items.append(item5)
+    }
+    
+    func configureCheckmark(for cell: UITableViewCell, at indexPath: IndexPath) {
+        
     }
     
     // MARK: - Table View Data Source
