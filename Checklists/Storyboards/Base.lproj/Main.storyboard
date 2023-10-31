@@ -77,9 +77,10 @@
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the Item" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qPy-a4-m7f">
                                                     <rect key="frame" x="16" y="0.0" width="343" height="44"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
                                                         <action selector="done" destination="UCm-7G-MrK" eventType="editingDidEndOnExit" id="fj0-yg-le9"/>
+                                                        <outlet property="delegate" destination="UCm-7G-MrK" id="P9m-4C-dEh"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -105,13 +106,14 @@
                                 <action selector="cancel" destination="UCm-7G-MrK" id="djx-Yy-twW"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="JPG-Ru-9YD">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" style="done" systemItem="done" id="JPG-Ru-9YD">
                             <connections>
                                 <action selector="done" destination="UCm-7G-MrK" id="BQX-I4-Dq5"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="doneBarButton" destination="JPG-Ru-9YD" id="6I4-Tl-A2l"/>
                         <outlet property="textField" destination="qPy-a4-m7f" id="FxZ-gf-hfz"/>
                     </connections>
                 </tableViewController>

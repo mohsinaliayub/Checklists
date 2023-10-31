@@ -10,6 +10,7 @@ import UIKit
 class AddItemViewController: UITableViewController {
     
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var doneBarButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,5 +35,18 @@ class AddItemViewController: UITableViewController {
     // MARK: - Table View Delegate
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         return nil
+    }
+}
+
+extension AddItemViewController: UITextFieldDelegate {
+    // Disable the Done button if the text is empty.
+    // This will work even if we cut/paste the text inside text field.
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let oldText = textField.text!
+        let stringRange = Range(range, in: oldText)!
+        let newText = oldText.replacingCharacters(in: stringRange, with: string)
+        
+        doneBarButton.isEnabled = !newText.isEmpty
+        return true
     }
 }
