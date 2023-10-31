@@ -36,19 +36,23 @@ class ChecklistViewController: UITableViewController {
     }
     
     func configureCheckmark(for cell: UITableViewCell, at indexPath: IndexPath) {
-        
+        let item = items[indexPath.row]
+        cell.accessoryType = item.checked ? .checkmark : .none
     }
     
     // MARK: - Table View Data Source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return items.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChecklistItem", for: indexPath)
         
+        let item = items[indexPath.row]
+        
         let label = cell.viewWithTag(1000) as! UILabel
-        label.text = todoItems[indexPath.row]
+        label.text = item.text
+        configureCheckmark(for: cell, at: indexPath)
         
         return cell
     }
@@ -57,7 +61,10 @@ class ChecklistViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let cell = tableView.cellForRow(at: indexPath) else { return }
         
-        cell.accessoryType = cell.accessoryType == .none ? .checkmark : .none
+        let item = items[indexPath.row]
+        item.checked.toggle()
+        
+        configureCheckmark(for: cell, at: indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
