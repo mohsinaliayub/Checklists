@@ -70,8 +70,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Add Item" largeTitleDisplayMode="never" id="P37-aK-Ujy">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Pqh-r8-KBk"/>
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="JPG-Ru-9YD"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Pqh-r8-KBk">
+                            <connections>
+                                <action selector="cancel" destination="UCm-7G-MrK" id="djx-Yy-twW"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="JPG-Ru-9YD">
+                            <connections>
+                                <action selector="done" destination="UCm-7G-MrK" id="BQX-I4-Dq5"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UXD-Jh-hSa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
