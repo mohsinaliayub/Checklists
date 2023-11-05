@@ -43,6 +43,7 @@ class ChecklistViewController: UITableViewController {
     func configureCheckmark(for cell: UITableViewCell, with item: ChecklistItem) {
         let label = cell.viewWithTag(1001) as! UILabel
         label.text = item.checked ? "√" : ""
+        saveChecklistItems()
     }
     
     // MARK: - Table View Data Source
@@ -77,6 +78,7 @@ class ChecklistViewController: UITableViewController {
         
         items.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .automatic)
+        saveChecklistItems()
     }
     
     // MARK: - Navigation
@@ -131,6 +133,7 @@ extension ChecklistViewController: ItemDetailViewControllerDelegate {
         
         let indexPath = IndexPath(row: newRowIndex, section: 0)
         tableView.insertRows(at: [indexPath], with: .automatic)
+        saveChecklistItems()
     }
     
     func itemDetailViewController(_ controller: ItemDetailViewController, didFinishEditing item: ChecklistItem) {
@@ -142,6 +145,7 @@ extension ChecklistViewController: ItemDetailViewControllerDelegate {
                 configureText(for: cell, with: item)
             }
         }
+        saveChecklistItems()
     }
 }
 
