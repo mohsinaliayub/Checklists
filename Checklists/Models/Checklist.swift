@@ -8,7 +8,7 @@
 import Foundation
 
 class Checklist: NSObject {
-    let name: String
+    var name: String
     
     init(name: String) {
         self.name = name
