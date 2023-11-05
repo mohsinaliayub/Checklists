@@ -93,6 +93,29 @@ class ChecklistViewController: UITableViewController {
             }
         }
     }
+    
+    // MARK: - Documents
+    func documentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+    }
+    
+    func dataFilePath() -> URL {
+        return documentsDirectory().appendingPathComponent("Checklists.plist")
+    }
+    
+    // MARK: - Persistence
+    func saveChecklistItems() {
+        let encoder = PropertyListEncoder()
+        
+        do {
+            let data = try encoder.encode(items)
+            
+            try data.write(to: dataFilePath(), options: .atomic)
+        } catch {
+            print("Error encoding item array: \(error.localizedDescription)")
+        }
+    }
 }
 
 extension ChecklistViewController: ItemDetailViewControllerDelegate {
