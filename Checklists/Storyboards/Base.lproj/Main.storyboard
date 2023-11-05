@@ -45,6 +45,9 @@
                                         <constraint firstItem="5Xa-6A-swd" firstAttribute="leading" secondItem="V1k-Re-Bax" secondAttribute="trailing" constant="8" symbolic="YES" id="kxb-7f-XM0"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="UCm-7G-MrK" kind="show" identifier="EditItem" trigger="accessoryAction" id="URK-NC-fTK"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -148,6 +151,9 @@
             <point key="canvasLocation" x="350" y="25"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="URK-NC-fTK"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
