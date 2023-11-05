@@ -14,25 +14,7 @@ class ChecklistViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        addDummyData()
-    }
-    
-    private func addDummyData() {
-        // Do any additional setup after loading the view.
-        let item1 = ChecklistItem(text: "Walk the dog")
-        items.append(item1)
-        
-        let item2 = ChecklistItem(text: "Brush my teeth", checked: true)
-        items.append(item2)
-        
-        let item3 = ChecklistItem(text: "Learn iOS development", checked: true)
-        items.append(item3)
-        
-        let item4 = ChecklistItem(text: "Soccer practice")
-        items.append(item4)
-        
-        let item5 = ChecklistItem(text: "Eat ice cream")
-        items.append(item5)
+        loadChecklistItems()
     }
     
     func configureText(for cell: UITableViewCell, with item: ChecklistItem) {
@@ -116,6 +98,19 @@ class ChecklistViewController: UITableViewController {
             try data.write(to: dataFilePath(), options: .atomic)
         } catch {
             print("Error encoding item array: \(error.localizedDescription)")
+        }
+    }
+    
+    func loadChecklistItems() {
+        let path = dataFilePath()
+        
+        guard let data = try? Data(contentsOf: path) else { return }
+        
+        let decoder = PropertyListDecoder()
+        do {
+            items = try decoder.decode([ChecklistItem].self, from: data)
+        } catch {
+            print("Error decoding item array: \(error.localizedDescription)")
         }
     }
 }
