@@ -47,11 +47,11 @@
                         <sections>
                             <tableViewSection id="Etj-sZ-b9m">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Y3c-Sc-8TM">
-                                        <rect key="frame" x="0.0" y="18" width="375" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="44" id="Y3c-Sc-8TM">
+                                        <rect key="frame" x="0.0" y="18" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Y3c-Sc-8TM" id="bQb-FZ-r8N">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the List" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="UJc-qj-0a4">
@@ -86,13 +86,14 @@
                                 <action selector="cancel" destination="qOc-PH-G6q" id="AbU-xt-OAk"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="4cA-CT-Mar">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" style="done" systemItem="done" id="4cA-CT-Mar">
                             <connections>
                                 <action selector="done" destination="qOc-PH-G6q" id="0SF-xU-WJx"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="doneBarButton" destination="4cA-CT-Mar" id="clF-2g-ziD"/>
                         <outlet property="textField" destination="UJc-qj-0a4" id="T5V-SB-t4f"/>
                     </connections>
                 </tableViewController>
