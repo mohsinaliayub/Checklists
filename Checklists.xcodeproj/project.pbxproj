@@ -18,6 +18,7 @@
 		B6E6D26A2AF7D6F600AFBF1C /* AllListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E6D2692AF7D6F600AFBF1C /* AllListsViewController.swift */; };
 		B6E6D26D2AF7DC8900AFBF1C /* Checklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E6D26C2AF7DC8900AFBF1C /* Checklist.swift */; };
 		B6E6D2702AF7E11A00AFBF1C /* ListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E6D26F2AF7E11A00AFBF1C /* ListDetailViewController.swift */; };
+		B6E6D2752AF7FF7000AFBF1C /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E6D2742AF7FF7000AFBF1C /* DataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		B6E6D2692AF7D6F600AFBF1C /* AllListsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllListsViewController.swift; sourceTree = "<group>"; };
 		B6E6D26C2AF7DC8900AFBF1C /* Checklist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checklist.swift; sourceTree = "<group>"; };
 		B6E6D26F2AF7E11A00AFBF1C /* ListDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailViewController.swift; sourceTree = "<group>"; };
+		B6E6D2742AF7FF7000AFBF1C /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 			children = (
 				B6C5E74C2AF13E94004C2721 /* ChecklistItem.swift */,
 				B6E6D26C2AF7DC8900AFBF1C /* Checklist.swift */,
+				B6E6D2742AF7FF7000AFBF1C /* DataModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				B6C5E74D2AF13E94004C2721 /* ChecklistItem.swift in Sources */,
 				B6E6D26D2AF7DC8900AFBF1C /* Checklist.swift in Sources */,
 				B6E6D2702AF7E11A00AFBF1C /* ListDetailViewController.swift in Sources */,
+				B6E6D2752AF7FF7000AFBF1C /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
